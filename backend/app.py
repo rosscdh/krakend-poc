@@ -45,7 +45,7 @@ def list_data() -> list:
     return [{"list_data": i} for i in range(0, 5)]
 
 routes = [
-    Route("/hello/{name}", hello),
+    Route("/hello/{name}/", hello),
     Route("/test/data/", data),
     Route("/test/list_data/", list_data),
 ]
