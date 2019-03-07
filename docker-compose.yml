@@ -1,0 +1,17 @@
+version: '3'
+services:
+  kraken:
+    image: devopsfaith/krakend
+    volumes:
+      - ${PWD}/krakend.json:/etc/krakend/krakend.json
+    ports:
+      - 8080:8000
+      - 8090:8090
+
+  backend:
+    build:
+      context: ./backend
+    volumes:
+      - ${PWD}/backend:/src
+    ports:
+      - 8001:8000
